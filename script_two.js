@@ -6,6 +6,7 @@
 //alert( true + "test" ); 
 //alert( "123" + undefined );
 
+
 var x = prompt ("Введите первое число");
 var y = prompt ("Введите второе число");
 if (x > y) {
