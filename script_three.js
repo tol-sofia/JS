@@ -1,9 +1,9 @@
 //задание 3.1 Написать программу, которая создаст объект user с полями name и age, заполнить их с помощью prompt и вывести после этого весь объект в консоль
 var user = {
-    name: prompt ("Введите Ваше имя"),
-    age: prompt ("Сколько Вам лет"),    
-    };
-    console.log(user);
+  name: prompt ("Введите Ваше имя"),
+  age: prompt ("Сколько Вам лет"),    
+  };
+console.log(user);
 
 //3.2 
 //Написать программу с помощью prompt. Заполните массив из 5 элементов и 
@@ -27,7 +27,7 @@ var i = star.length;
 while (i >= 0) { 
     i--
   }
-  alert( result );
+alert( result );
 
 
 //3.3Создать объект магазин с продуктами. 
@@ -35,17 +35,25 @@ while (i >= 0) {
 //Через цикл заполнить с помощью prompt информацию о всех товарах вашего магазина. 
 //Цена имеет валидацию
 alert("Добо пожаловать в наш магазин! Заполните список продуктов");
-var  productArr = [], priceArr = [];
-var repeat = prompt("Сколько продуктов купите?");  
-var i = repeat           
-while (i-- ){
-    productArr.push(prompt("Введите название продукта "));
-    var currentPrice = parseInt(prompt("Введите цену продукта ")); 
-    if (isNaN(currentPrice)) {
-    alert("Введенное значение не является числом. Введите данные правильно"); 
+var SomeArr = [];  
+var replay = prompt("Сколько продуктов купите?"); 
+var i = replay;
+validity:
+while ( i > 0) {
+  var SomeObj = {};   
+  SomeObj.name = prompt("Введите название продукта ");
+  SomeObj.price = parseInt(prompt("Введите цену продукта ")); 
+    if (isNaN(SomeObj.price)){ 
+    alert("Введенное значение не является числом. Введите данные правильно");
+    continue validity
     } else {
-    priceArr.push(currentPrice);
+      SomeArr.push(SomeObj);
     }
+  i --
 }
-alert("Список товаров: " + productArr  +  priceArr);
- 
+var answer = "";
+for (var i = 0; i < SomeArr.length; i++) {
+  answer = i + ' ' + SomeArr[i].name + ' ' + SomeArr[i].price + ' ';
+}
+alert("Список продуктов " + answer);
+

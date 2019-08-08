@@ -1,10 +1,7 @@
-//console.log (0 == false);
-//console.log (string == null);
-//console.log (null == true);
-//console.log (0 == false);
-
-//alert( true + "test" ); 
-//alert( "123" + undefined );
+console.log (0 == false);
+console.log (string == null);
+console.log (null == true);
+console.log (0 == false);
 
 
 var x = prompt ("Введите первое число");
