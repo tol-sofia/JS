@@ -35,25 +35,25 @@ alert( result );
 //Через цикл заполнить с помощью prompt информацию о всех товарах вашего магазина. 
 //Цена имеет валидацию
 alert("Добо пожаловать в наш магазин! Заполните список продуктов");
-var SomeArr = [];  
-var replay = prompt("Сколько продуктов купите?"); 
-var i = replay;
+var store = [];  
+var howmanyproducts = prompt("Сколько продуктов купите?"); 
+var i = howmanyproducts;
 validity:
 while ( i > 0) {
-  var SomeObj = {};   
-  SomeObj.name = prompt("Введите название продукта ");
-  SomeObj.price = parseInt(prompt("Введите цену продукта ")); 
-    if (isNaN(SomeObj.price)){ 
+  var productdescription = {};   
+  productdescription.name = prompt("Введите название продукта ");
+  productdescription.price = parseInt(prompt("Введите цену продукта ")); 
+    if (isNaN(productdescription.price)){ 
     alert("Введенное значение не является числом. Введите данные правильно");
     continue validity
     } else {
-      SomeArr.push(SomeObj);
+      store.push(productdescription);
     }
   i --
 }
-var answer = "";
-for (var i = 0; i < SomeArr.length; i++) {
-  answer = i + ' ' + SomeArr[i].name + ' ' + SomeArr[i].price + ' ';
+var grocerylist = "";
+for (var i = 0; i < store.length; i++) {
+  grocerylist = i + ' ' + store[i].name + ' ' + store[i].price + ' ';
 }
-alert("Список продуктов " + answer);
+alert("Список продуктов " + grocerylist);
 
