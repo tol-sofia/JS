@@ -1,25 +1,26 @@
-console.log (0 == false);
-console.log (string == null);
-console.log (null == true);
-console.log (0 == false);
+//6.1 Написать скрипт, который будет изменять стили блоков при нажатии на них мышкой, 
+//без использования CSS (использовать onclick и addEventListener)
 
+var box = document.getElementsByClassName('box')[0];
+box.onclick = function changepred () {
+    box.style.cssText=`color: green;
+    text-align: center;
+    font-size: 30px;
+  `;
+};
 
-var x = prompt ("Введите первое число");
-var y = prompt ("Введите второе число");
-if (x > y) {
-    alert ('Первое больше второго')
-} if (x < y) {
-    alert ('Второе больше первого')
-} if (x == y) {
-    alert ('Они равны');
-}
-
-var a = prompt ("Введите любую букву");
-var b = prompt ("Введите любую букву");
-if (a > b) {
-    alert ('Первая буква стоит раньше')
-} if (a < b) {
-    alert ('Вторая буква стоит раньше')
-} if (a == b) {
-    alert ('Одинаковые буквы');
-}
+function changeproperties
+() {
+    box.style.color = "red";
+}   
+box.addEventListener("click", changeproperties);
+//6.2Написать скрипт, чтобы при нажатии на блок, снизу добавился новый блок (работать код должен единожды)
+var block = document.getElementsByClassName('block')[0];
+function addnewblock () {
+    var newblock = document.createElement('div');
+    newblock.className = "newblock";
+    newblock.innerHTML = "А вот и я!"; 
+    document.body.append(newblock);
+    block.removeEventListener("click", addnewblock, false);
+}   
+block.addEventListener("click", addnewblock);

@@ -3,7 +3,7 @@
 var div = document.createElement('div');
 //var textinside = document.createTextNode('А вот и я');
 div.className = "createdblock";
-div.innerHTML = "Море волнуется три! Морская фигура замри!>"; 
+div.innerHTML = "Море волнуется три! Морская фигура замри!"; 
 document.body.append(div);
 var img = document.createElement("img");
 img.src = './img/cat.jpg';
