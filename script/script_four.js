@@ -50,7 +50,13 @@ function errorchecking(str) {
 alert(errorchecking());
 
 //4.3 Написать программу, которая будет обрезать текст начиная с первого слова и до слова “кукушка”.
+var sentence = prompt("Введите текст");
+var pos = sentence.search("Кукушка");
+word = sentence.substring(0, pos);
 
+alert(sentence.substring(0, pos));
+
+//через функцию почему-то не получается вывести
 var sentence = "В лесу была хорошая погода. Кукушка куковала.";
 function trimmedline() {
   var pos = sentence.search("Кукушка");
@@ -62,7 +68,35 @@ function trimmedline() {
   return (word);
 }
 trimmedline();
-console.log (word);
+alert(word);
+
+
+//4.4*****
+alert("Добо пожаловать в наш магазин! Заполните список продуктов");
+var store = [];  
+var howmanyproducts = prompt("Сколько продуктов купите?"); 
+var i = howmanyproducts;
+validity:
+while ( i > 0) {
+  var productdescription = {};   
+  productdescription.name = prompt("Введите название продукта ");
+  productdescription.price = parseInt(prompt("Введите цену продукта ")); 
+    if (isNaN(productdescription.price)){ 
+    alert("Введенное значение не является числом. Введите данные правильно");
+    continue validity
+    } else {
+      store.push(productdescription);
+    }
+  i --
+}
+var grocerylist = "";
+for (var i = 0; i < store.length; i++) {
+  grocerylist = i + ' ' + store[i].name + ' ' + store[i].price + ' ';
+}
+alert("Список продуктов " + grocerylist);
+
+
+
 
 
 
