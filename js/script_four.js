@@ -41,9 +41,9 @@ var strArr = str.split(". ");
 function errorchecking(str) { 
   var newArr = [];
   for(var i = 0 ; i < strArr.length ; i++ ){
-    var FirstLetter = strArr[i].charAt(0).toUpperCase();
+    var firstLetter = strArr[i].charAt(0).toUpperCase();
     var restOfWord = strArr[i].slice(1);
-    newArr[i] = FirstLetter + restOfWord;
+    newArr[i] = firstLetter + restOfWord;
   } 
   return newArr.join(". ");
 }
@@ -51,7 +51,7 @@ alert(errorchecking());
 
 //4.3 Написать программу, которая будет обрезать текст начиная с первого слова и до слова “кукушка”.
 var sentence = prompt("Введите текст");
-var pos = sentence.search("Кукушка");
+var pos = sentence. indexOf("Кукушка");
 word = sentence.substring(0, pos);
 
 alert(sentence.substring(0, pos));
@@ -60,11 +60,6 @@ alert(sentence.substring(0, pos));
 var sentence = "В лесу была хорошая погода. Кукушка куковала.";
 function trimmedline() {
   var pos = sentence.search("Кукушка");
-  if (pos > 0) {
-    word = sentence.substring(0, pos);
-  } else {
-    word = sentence;
-  }
   return (word);
 }
 trimmedline();
@@ -95,8 +90,33 @@ for (var i = 0; i < store.length; i++) {
 }
 alert("Список продуктов " + grocerylist);
 
+var filter = prompt("Введие нужный фильтр (цена, название, добавить, удалить, изменить цену, весь список, вывод в консоль"); 
+
+function searchbyprice() {
+  if (filter == "цена"){ 
+    grocerylist;
+    continue validity
+    } else {
+      alert("Данная цена не найдена");
+    }   
+  }
+  function LinearSearch(t, grocerylist) {                               
+    var n = grocerylist.length, i = 0;   
+    grocerylist[n] = t;
+    while (grocerylist[ i ] !== t) i++;                          
+    if (i < n) return i;         
+    else return -1;             
+}
+
+const user = grocerylist.find(user => user.id === 'цена')
 
 
 
+// 4**)  Написать скрипт, который создаст объект магазин,
+// который будет иметь поля: имя и  продукты, также написать
+// функцию поиска в магазине по цене, функцию поиска
+// по названию, функцию добавления нового продукта в конец
+// списка, функцию удаления продукта по номеру в списке (нумерация идет с нуля), функцию изменения цены товара
+// по его номеру, функцию вывода всех товаров, функция вывода всего магазина в консоль.
 
 

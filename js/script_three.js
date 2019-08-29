@@ -38,18 +38,16 @@ alert("Добо пожаловать в наш магазин! Заполнит�
 var store = [];  
 var howmanyproducts = prompt("Сколько продуктов купите?"); 
 var i = howmanyproducts;
-validity:
 while ( i > 0) {
   var productdescription = {};   
   productdescription.name = prompt("Введите название продукта ");
   productdescription.price = parseInt(prompt("Введите цену продукта ")); 
     if (isNaN(productdescription.price)){ 
     alert("Введенное значение не является числом. Введите данные правильно");
-    continue validity
     } else {
       store.push(productdescription);
+      i --
     }
-  i --
 }
 var grocerylist = "";
 for (var i = 0; i < store.length; i++) {

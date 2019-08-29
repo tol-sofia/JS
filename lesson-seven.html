@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
-  <title>учусь js</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <link href="style.css" rel="stylesheet">
+<title>учусь js</title>
 </head>
 <body>
   <div class="header">
@@ -40,11 +37,31 @@
       </div>
     </div>
   </div>
-    <div class="cube">
-    <div class="block">Море волнуется раз!</div>
-    <div class="block">Море волнуется два!</div>
+  <div class="to-do">
+    <div class="container">
+      <div class="to-do_content">
+        <div class="to-do_title">Добавить дело</div>
+        <input id="new_task" type="text">
+        <button id="add">Добавить</button>
+        <div class="to-do__title">Список дел</div>
+        <ul id="unfinished-tasks">
+        </ul> 
+        <div class="to-do__title">Завершенные дела</div>
+        <ul id="finished-tasks">
+        </ul> 
+      </div>
+    </div>
   </div>
-</body>
-<script src="./js/script_five.js"></script>
+  <div class="temperature">
+    <p>Впишите число</p>
+    <input id="c" name="c" onkeyup="convert('C')"> градусов Цельсия<br />
+    <p>Равно</p>
+    <input id="f" name="f" onkeyup="convert('F')"> градусов Фаренгейта 
+  </div>
 
+  <div class="wrap-center">
+      <canvas id="canvas" width="250px" height="250px"></canvas>
+  </div>
+  <div id="dissolution"></div>
+<script src="./js/script_seven.js"></script>
 </html>

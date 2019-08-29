@@ -39,8 +39,65 @@
         </div>
       </div>
     </div>
-  </div>    <div class="box">Нажми на меня!</div>
-    <div class="block">Добавь блок</div>
+  </div>
+  <section class="time-to">
+    <div class="container">
+      <div class="time-to__content">
+        <div class="time-to__title">Введите gggg.mm.dd</div>
+        <input type="text" size="49px" id="data_enter">
+        <div class="time-to__result">До даты которую вы ввели осталось: <span id="timer"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="light-bulbs">
+    <div class="container">
+      <div class="light-bulbs__content">
+        <div class="light-bulbs__title">На лампочку и увидите чудо</div>
+        <div class="lamps">
+          <div class="lamps__black"></div>
+          <div class="lamps__yellow"></div>
+          <div class="lamps__blue"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paralax">
+    <div class="container">
+      <div class="paralax__content">
+        <div class="paralax__title">ДАННЫЙ блок нужен для демонстрации параллакс эффекта</div>
+        <div class="parallax__image"><div class="parallax__shadow"></div></div>
+        <div class="parallax__text">Параллакс ЭФФЕКТ</div>
+    </div>
+  </div>
+</div>
+
+`<div class="gallery">
+  <div class="container">
+`   <ul class="slider">
+      <li class="item showing">
+        <img src="./img/bicycle.png">
+      </li>
+      <li class="item">
+        <img src="./img/sunset.png">
+      </li>
+      <link class="item">
+        <img src="/img/water.png">
+    </li>
+    `</ul >
+    <div class="buttons">
+      <div class="button" id="left"><img src="./img/left.png"></div>
+      <div class="button" id="right"><img src="./img/right.png"></div>
+    </div>    
+    <div class="slider-dots">
+      <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
+      <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
+      <span class="slider-dots_item" onclick="currentSlide(3)"></span> 
+    </div>
+  </div>      
+</div>
+
 </body>
-<script src="./js/script_six.js"></script>
+<script src="./js/script_eight.js"></script>
 </html>
