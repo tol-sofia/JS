@@ -67,36 +67,38 @@
     <div class="container">
       <div class="paralax__content">
         <div class="paralax__title">ДАННЫЙ блок нужен для демонстрации параллакс эффекта</div>
-        <div class="parallax__image"><div class="parallax__shadow"></div></div>
-        <div class="parallax__text">Параллакс ЭФФЕКТ</div>
+        <div data-speed="5" class="layer parallax__image">        
+          <div data-speed="5" class="parallax__shadow"></div>      
+        </div>
+        <div data-speed="30" class="layer parallax__text">Параллакс ЭФФЕКТ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="slider__title">Слайдер картинок</div>
+      <div class="wrap-slider" >
+          <div class="slider">
+            <div class="slider__content" id="wrap-slider">
+              <img class="slide" src="./img/bicycle.png">
+              <img class="slide" src="./img/sunset.png">
+              <img class="slide" src="./img/water.png">
+            </div>
+          </div>
+          <div class="slider-nav">
+            <div onclick="plusSlides(-1)" class="slider-arrow slider-left"><img src="./img/left.png"></div>
+            <div onclick="plusSlides(1)" class="slider-arrow slider-right"><img src="./img/right.png"></div>
+          </div>
+        <div class="slider-dots">
+            <div class="slider-dots_item"  onclick="currentSlide(1)"></div> 
+            <div class="slider-dots_item" onclick="currentSlide(2)"></div> 
+            <div class="slider-dots_item" onclick="currentSlide(3)"></div> 
+        </div>
     </div>
   </div>
 </div>
 
-`<div class="gallery">
-  <div class="container">
-`   <ul class="slider">
-      <li class="item showing">
-        <img src="./img/bicycle.png">
-      </li>
-      <li class="item">
-        <img src="./img/sunset.png">
-      </li>
-      <link class="item">
-        <img src="/img/water.png">
-    </li>
-    `</ul >
-    <div class="buttons">
-      <div class="button" id="left"><img src="./img/left.png"></div>
-      <div class="button" id="right"><img src="./img/right.png"></div>
-    </div>    
-    <div class="slider-dots">
-      <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
-      <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
-      <span class="slider-dots_item" onclick="currentSlide(3)"></span> 
-    </div>
-  </div>      
-</div>
 
 </body>
 <script src="./js/script_eight.js"></script>

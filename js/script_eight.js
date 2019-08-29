@@ -1,11 +1,11 @@
-//таймер отсчета от даты
+//таймер отсчета lf даты
 var input = document.getElementById("data_enter");
 function timer() {
   var nowDate = new Date();
   var achiveDate = new Date(input.value).getTime();
   var result = (achiveDate - nowDate)+1000;
   if (result < 0) {
-      var elmnt = document.getElementById('timer');
+      var elmnt = document.getElementById("timer");
       elmnt.innerHTML = 'Эта дата уже прошла';
       return undefined;
   }
@@ -16,7 +16,7 @@ function timer() {
   if (seconds < 10) seconds = '0' + seconds;
   if (minutes < 10) minutes = '0' + minutes;
   if (hours < 10) hours = '0' + hours;
-  var elmnt = document.getElementById('timer');
+  var elmnt = document.getElementById("timer");
   elmnt.innerHTML = days + 'дн' + hours + 'ч' + minutes + 'мин' + seconds;
   setTimeout(timer, 1000);
 }
@@ -67,70 +67,69 @@ blue.onmouseout = function a() {
 }
 
 // параллакс
-
-const boxer = boxercontainer.querySelector("parallax__image"),
-maxMove = boxercontainer.offsetWidth / 30,
-boxerCenterX = boxer.offsetLeft + (boxer.offsetWidth / 2),
-boxerCenterY = boxer.offsetTop + (boxer.offsetHeight / 2),
-fluidboxer = window.matchMedia("(min-width: 726px)");
-
-function getMousePos(xRef, yRef) {
-  
-  let panelRect = boxercontainer.getBoundingClientRect();
-  return {
-      x: Math.floor(xRef - panelRect.left) /(panelRect.right-panelRect.left)*boxercontainer.offsetWidth,
-      y: Math.floor(yRef - panelRect.top) / (panelRect.bottom -panelRect.top) * boxercontainer.offsetHeight
-    };
+function parallax() {
+  let ypos = window.pageYOffset;
+  this.querySelectorAll('.layer').forEach(layer => {
+      let speed = layer.getAttribute('data-speed');
+      layer.style.transform = `translateY(${ypos*speed/230}px)`
+  });
 }
+document.addEventListener('scroll', parallax);
 
-document.body.addEventListener("mousemove", function(e) {
-  let mousePos = getMousePos(e.clientX, e.clientY),
-  distX = mousePos.x - boxerCenterX,
-  distY = mousePos.y - boxerCenterY;
-  if (Math.abs(distX) < 500 && distY < 200 && fluidboxer.matches) {
-  boxer.style.transform = "translate("+(-1*distX)/12+"px,"+(-1*distY)/12+"px)";
-    boxercontainer.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
+window.onload = function(){
+  var increase = document.getElementsByClassName('parallax__image');
+  increase.onmouseover = function(){
+    if (even) {
+      Shadow.style.opacity = "0";
+      even = false;
+    } else {
+      increase.style.zoom = "1";
+        even = true;
+    }
   }
-})
+};
+
+var increase = document.getElementsByClassName("parallax__image")[0];
+var Shadow = document.getElementsByClassName("parallax__shadow")[0];
+increase.onmouseover = function parallaxChangeOver() {                  
+  increase.style.transform = "scale(1.2)";
+  Shadow.style.opacity = "0";
+  Shadow.style.transition = "1s";
+  increase.style.transition = "1s";
+}
+increase.onmouseout = function parallaxChangeOver() {                     
+  increase.style.transform = "scale(1)";
+  Shadow.style.opacity = "1";
+  Shadow.style.transition = "2s";
+  increase.style.transition = "2s";
+}
 
 // слайдер
-//* Индекс слайда по умолчанию */
-var controls = document.querySelectorAll('buttons');
-for(var i = 0; i < controls.length; i++){
-    controls[i].style.display = 'inline-block';
-}
-
-var slides = document.querySelectorAll('#slider .item');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,2000);
-
-function nextSlide(){
-    goToSlide(currentSlide+1);
-}
-
-function previousSlide(){
-    goToSlide(currentSlide-1);
-}
-
-function goToSlide(n){
-    slides[currentSlide].className = 'item';
-    currentSlide = (n+slides.length)%slides.length;
-    slides[currentSlide].className = 'item showing';
-}
-
-pauseButton.onclick = function(){
-    if(playing){ pauseSlideshow(); }
-    else{ playSlideshow(); }
-};
-
-var next = document.getElementById('left');
-var previous = document.getElementById('right');
-
-next.onclick = function(){
-    pauseSlideshow();
-    nextSlide();
-};
-previous.onclick = function(){
-    pauseSlideshow();
-    previousSlide();
-};
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("slider-dots_item");
+    if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block"; 
+    dots[slideIndex-1].className += " active";
+  }
