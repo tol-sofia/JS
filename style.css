@@ -226,22 +226,22 @@ line-height: 28px;
   grid-column: auto;
 }
 .createdblock {
-  width: 300px;
-  height: 300px; 
+  width: 200px;
+  height: 200px; 
   background-color: rgb(35, 183, 228);
 }
 .createdblock-img {
-  width: 200px;
-  height: 200px; 
+  width: 150px;
+  height: 150px; 
 }
 
-.box {
+.addbox {
   width: 100px;
   height: 100px;
   background-color: green;
 }
 
-.block {
+.addblock {
   width: 100px;
   height: 100px;
   background-color: yellow;
